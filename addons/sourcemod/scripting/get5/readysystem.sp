@@ -57,7 +57,6 @@ public bool IsTeamReady(MatchTeam team) {
   if (g_GameState == GameState_Live) {
     return true;
   }
-
   if (team == MatchTeam_TeamNone) {
     return true;
   }
@@ -72,6 +71,9 @@ public bool IsTeamReady(MatchTeam team) {
   }
 
   if (IsTeamForcedReady(team) && readyCount >= minReady) {
+    return true;
+  }
+  if (readyCount >= minReady) {
     return true;
   }
 
