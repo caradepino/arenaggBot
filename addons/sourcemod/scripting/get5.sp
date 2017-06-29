@@ -512,11 +512,17 @@ public void OnClientPutInServer(int client) {
 }
 public void OnClientDisconnect(int client){
 	MatchTeam team = GetClientMatchTeam(client);
-	ChangeState(GameState_None);
-	Stats_Forfeit(team);
-	EndSeries();
-	Get5_MessageToAll("%t", "WaitingForGOTVBrodcastEndingInfoMessage");
+	int playerCount = GetTeamPlayerCount(team);
+	if(playerCount<1){
+		ChangeState(GameState_None);
+		Stats_Forfeit(team);
+		EndSeries();
+		Get5_MessageToAll("%t", "WaitingForGOTVBrodcastEndingInfoMessage");
+	}
 }
+
+
+
 public void OnClientSayCommand_Post(int client, const char[] command, const char[] sArgs) {
 	if (StrEqual(command, "say")) {
 		EventLogger_ClientSay(client, sArgs);
