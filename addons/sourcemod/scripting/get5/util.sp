@@ -71,6 +71,7 @@ stock void SwitchPlayerTeam(int client, int team) {
   }
 }
 
+
 /**
  * Returns if a client is valid.
  */
