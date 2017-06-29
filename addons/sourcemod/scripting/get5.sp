@@ -609,55 +609,44 @@ public Action Timer_CheckReady(Handle timer) {
 }
 
 static void CheckReadyWaitingTimes() {
-	int value = 0;
-	
   if (g_TeamTimeToStartCvar.IntValue > 0) {
-  	value = 0;
-    CheckReadyWaitingTime(MatchTeam_Team1, value);
-	value++;
-    CheckReadyWaitingTime(MatchTeam_Team2, value);
-	value++;
-	CheckReadyWaitingTime(MatchTeam_Team2, value);
+    CheckReadyWaitingTime(MatchTeam_Team1);
+    CheckReadyWaitingTime(MatchTeam_Team2);
   }
 }
 
-static void CheckReadyWaitingTime(MatchTeam team, int value) {
-	if (!IsTeamReady(team) && g_GameState != GameState_None) {
-		g_ReadyTimeWaitingUsed[team]++;
-		int timeLeft = g_TeamTimeToStartCvar.IntValue - g_ReadyTimeWaitingUsed[team];
-		
-		if (timeLeft <= 0) {
-			Get5_MessageToAll("%t", "TeamForfeitInfoMessage", g_FormattedTeamNames[team]);
-			ChangeState(GameState_None);
-			//Stats_Forfeit(team);
-			if(value > 1){
-				
-				
-				if(IsTeamReady(MatchTeam_Team1)){
-					Stats_Forfeit(MatchTeam_Team2);
-				}
-				
-				else if(IsTeamReady(MatchTeam_Team2)){
-					Stats_Forfeit(MatchTeam_Team1);
-				}else{
-					Stats_Forfeit(MatchTeam_TeamNone);
-				}
-				
-				EndSeries();
-			}
-			
-			
-		} else if (timeLeft >= 300 && timeLeft % 60 == 0) {
-			Get5_MessageToAll("%t", "MinutesToForfeitMessage", g_FormattedTeamNames[team], timeLeft / 60);
-			
-		} else if (timeLeft < 300 && timeLeft % 30 == 0) {
-			Get5_MessageToAll("%t", "SecondsToForfeitInfoMessage", g_FormattedTeamNames[team], timeLeft);
-			
-		} else if (timeLeft == 10) {
-			Get5_MessageToAll("%t", "10SecondsToForfeitInfoMessage", g_FormattedTeamNames[team],
-			timeLeft);
-		}
-	}
+static void CheckReadyWaitingTime(MatchTeam team) {
+  if (!IsTeamReady(team) && g_GameState != GameState_None) {
+    g_ReadyTimeWaitingUsed[team]++;
+    int timeLeft = g_TeamTimeToStartCvar.IntValue - g_ReadyTimeWaitingUsed[team];
+
+    if (timeLeft <= 0) {
+      Get5_MessageToAll("%t", "TeamForfeitInfoMessage", g_FormattedTeamNames[team]);
+	  if(team==MatchTeam_Team1 && IsTeamReady(MatchTeam_Team2)){
+	  	ChangeState(GameState_None);
+		Stats_Forfeit(team);
+		EndSeries();
+	  }else if(team==MatchTeam_Team2 && IsTeamReady(MatchTeam_Team1)){
+		ChangeState(GameState_None);
+		Stats_Forfeit(team);
+		EndSeries();
+	  }else{
+		ChangeState(GameState_None);
+		Stats_Forfeit(MatchTeam_TeamNone);
+		EndSeries();
+	  }
+      
+
+    } else if (timeLeft >= 300 && timeLeft % 60 == 0) {
+      Get5_MessageToAll("%t", "MinutesToForfeitMessage", g_FormattedTeamNames[team], timeLeft / 60);
+
+    } else if (timeLeft < 300 && timeLeft % 30 == 0) {
+      Get5_MessageToAll("%t", "SecondsToForfeitInfoMessage", g_FormattedTeamNames[team], timeLeft);
+
+    } else if (timeLeft == 10) {
+      Get5_MessageToAll("%t", "10SecondsToForfeitInfoMessage", g_FormattedTeamNames[team],timeLeft);
+    }
+  }
 }
 
 static void CheckAutoLoadConfig() {
@@ -968,7 +957,7 @@ public void EndSeries() {
 	int t1maps = g_TeamSeriesScores[MatchTeam_Team1];
 	int t2maps = g_TeamSeriesScores[MatchTeam_Team2];
 	MatchTeam winningTeam = MatchTeam_TeamNone;
-	if(t1maps+t2maps<0){
+	if((t1maps+t2maps)>0){
 		if(t1maps>t2maps){
 			winningTeam = MatchTeam_Team1;
 		}else{

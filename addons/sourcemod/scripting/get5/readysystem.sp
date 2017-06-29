@@ -73,9 +73,6 @@ public bool IsTeamReady(MatchTeam team) {
   if (IsTeamForcedReady(team) && readyCount >= minReady) {
     return true;
   }
-  if (readyCount >= minReady) {
-    return true;
-  }
 
   return false;
 }
