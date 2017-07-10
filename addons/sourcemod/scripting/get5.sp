@@ -962,37 +962,31 @@ public void KickClientsOnEnd() {
 }
 
 public void EndSeries() {
-	DelayFunction(10.0, KickClientsOnEnd);
-	StopRecording();
-	
-	// Figure out who won
-	int t1maps = g_TeamSeriesScores[MatchTeam_Team1];
-	int t2maps = g_TeamSeriesScores[MatchTeam_Team2];
-	MatchTeam winningTeam = MatchTeam_TeamNone;
-	if((t1maps+t2maps)>0){
-		if(t1maps>t2maps){
-			winningTeam = MatchTeam_Team1;
-		}else{
-			winningTeam = MatchTeam_Team2;
-		}
-	}else{
-		winningTeam = g_StatsKv.GetNum(STAT_SERIESWINNER_TEAM);
-	}
-	
-	
-	
-	
-	Stats_SeriesEnd(winningTeam);
-	EventLogger_SeriesEnd(winningTeam, t1maps, t2maps);
-	
-	Call_StartForward(g_OnSeriesResult);
-	Call_PushCell(winningTeam);
-	Call_PushCell(t1maps);
-	Call_PushCell(t2maps);
-	Call_Finish();
-	
-	RestoreCvars(g_MatchConfigChangedCvars);
-	ChangeState(GameState_None);
+  DelayFunction(10.0, KickClientsOnEnd);
+  StopRecording();
+
+  // Figure out who won
+  int t1maps = g_TeamSeriesScores[MatchTeam_Team1];
+  int t2maps = g_TeamSeriesScores[MatchTeam_Team2];
+
+  MatchTeam winningTeam = MatchTeam_TeamNone;
+  if (t1maps > t2maps) {
+    winningTeam = MatchTeam_Team1;
+  } else if (t2maps > t1maps) {
+    winningTeam = MatchTeam_Team2;
+  }
+
+  Stats_SeriesEnd(winningTeam);
+  EventLogger_SeriesEnd(winningTeam, t1maps, t2maps);
+
+  Call_StartForward(g_OnSeriesResult);
+  Call_PushCell(winningTeam);
+  Call_PushCell(t1maps);
+  Call_PushCell(t2maps);
+  Call_Finish();
+
+  RestoreCvars(g_MatchConfigChangedCvars);
+  ChangeState(GameState_None);
 }
 
 public Action Event_RoundPreStart(Event event, const char[] name, bool dontBroadcast) {
