@@ -1,0 +1,367 @@
+"Phrases"
+{
+    "ReadyToVetoInfoMessage"
+    {
+        "es"            "Escribe {GREEN}!ready {NORMAL}cuando tu equipo este preparado para vetar."
+    }
+    "WaitingForCastersReadyInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "Esperando a que {1} escriba {GREEN}!ready {NORMAL}para comenzar."
+    }
+    "ReadyToRestoreBackupInfoMessage"
+    {
+        "es"            "Escribe {GREEN}!ready {NORMAL}cuando estes preparado para restaurar la copia de seguridad del partido."
+    }
+    "ReadyToKnifeInfoMessage"
+    {
+        "es"            "Escribe {GREEN}!ready {NORMAL}cuando estes preparado para cuchillos."
+    }
+    "ReadyToStartInfoMessage"
+    {
+        "es"            "Escribe {GREEN}!ready {NORMAL}cuando estes preparado para empezar."
+    }
+    "YouAreReady"
+    {
+        "es"            "Estas liso para empezar"
+    }
+    "YouAreNotReady"
+    {
+        "es"            "NO estas preparado para empezar"
+    }
+    "WaitingForEnemySwapInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} ganó la ronda de cuchillos. Esperando a que escriba !stay o !swap."
+    }
+    "WaitingForGOTVBrodcastEndingInfoMessage"
+    {
+        "es"            "El mapa cambiará cuando termine la retrasmisión de GOTV"
+    }
+    "NoMatchSetupInfoMessage"
+    {
+        "es"			"El partido no esta configurado"
+    }
+    "YourAreNotAPlayerInfoMessage"
+    {
+        "es"            "No eres un jugador de este partido"
+    }
+    "TeamIsFullInfoMessage"
+    {
+        "es"            "Tu equipo esta completo"
+    }
+    "TeamForfeitInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} no estaba preparado a tiempo y pierde el partido"
+    }
+    "MinutesToForfeitMessage"
+    {
+        "#format"       "{1:s},{2:d}"
+        "es"            "{1} tiene {2} minutos para estar liso o perderá el partido."
+    }
+    "SecondsToForfeitInfoMessage"
+    {
+        "#format"       "{1:s},{2:d}"
+        "es"            "{1} tiene {2} segundos para estar liso o perderá el partido."
+    }
+    "10SecondsToForfeitInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} tiene 10 segundos para estar liso o perderá el partido"
+    }
+    "PausePeriodSuffix"
+    {
+        "es"            "por descanso"
+    }
+    "MaxPausesUsedInfoMessage"
+    {
+        "#format"       "{1:d},{2:s}"
+        "es"            "Tu equipo ha utilizado {1} pausas de {2} como máximo."
+    }
+    "MaxPausesTimeUsedInfoMessage"
+    {
+        "#format"       "{1:d},{2:s}"
+        "es"            "Tu equipo ha utilizado el máximo de {1} segundos en pausa {2}."
+    }
+    "MatchPausedByTeamMessage"
+    {
+        "#format"       "{1:N}"
+        "es"            "{1} pausa del partido."
+    }
+    "PauseTimeExpiration10SecInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} poco para terminar la pausa, se quitará la pausa en 10 segundos."
+    }
+    "PauseTimeExpirationInfoMessage"
+    {
+        "#format"       "{1:s},{2:d},{3:s}"
+        "es"            "{1} tiene {2} segundos para la pausa siguiente{3}."
+    }
+    "PauseRunoutInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} se acabado el tiempo de pausa, se quitá la pausa del partido."
+    }
+    "MatchUnpauseInfoMessage"
+    {
+        "#format"       "{1:N}"
+        "es"            "{1:N} se reanuda el partido."
+    }
+    "WaitingForUnpauseInfoMessage"
+    {
+        "#format"       "{1:s},{2:s}"
+        "es"            "{1} quiere quitar la pausa, esperando a que {2} escriba !unpause."
+    }
+    "PausesLeftInfoMessage"
+    {
+        "#format"       "{1:s},{2:d},{3:s}"
+        "es"            "{1} tiene {2} pausas aún {3}."
+    }
+    "OnePauseLeftInfoMessage"
+    {
+        "#format"       "{1:s},{2:d},{3:s}"
+        "es"            "{1} tiene {2} pausa aún {3}."
+    }
+    "TeamFailToReadyMinPlayerCheck"
+    {
+        "#format"       "{1:d}"
+        "es"            "Debe haber {1} jugadores en el server para estar preparados."
+    }
+    "TeamReadyToVetoInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} está preparado para el veto."
+    }
+    "TeamReadyToRestoreBackupInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} está preparado para cargar la copia de seguridad del partido."
+    }
+    "TeamReadyToKnifeInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} está preparado para cuchillos de elección de bando"
+    }
+    "TeamReadyToBeginInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} está  para empezar el partido."
+    }
+    "TeamNotReadyInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} ya no esta preparado."
+    }
+    "ForceReadyInfoMessage"
+    {
+        "#format"       "{1:d}"
+        "es"            "Puedes escribir {GREEN}!forceready {NORMAL}para forzar a su equipo si tiene menos de {GREEN}{1}{NORMAL} jugadores."
+    }
+    "TeammateForceReadied"
+    {
+        "#format"       "{1:N}"
+        "es"            "Su equipo ha sido forzado por {GREEN}{1}"
+    }
+    "AdminForceReadyInfoMessage"
+    {
+        "es"            "El admin ha forzado a ambos equipos."
+    }
+    "AdminForceEndInfoMessage"
+    {
+        "es"            "El admin ha forzado la finalización del partido."
+    }
+    "AdminForcePauseInfoMessage"
+    {
+        "es"            "El admin ha forzado una pausa."
+    }
+    "AdminForceUnPauseInfoMessage"
+    {
+        "es"            "El admin ha quitado la pausa."
+    }
+    "TeamWantsToReloadLastRoundInfoMessage"
+    {
+        "#format"       "{1:s},{2:s}"
+        "es"            "{1} quiere para y recargar la última ronda,  necesita {2} confirmar escribiendo !stop."
+    }
+    "TeamWinningSeriesInfoMessage"
+    {
+        "#format"       "{1:s},{2:d},{3:d}"
+        "es"            "{1}{NORMAL} está ganado la serie {2}-{3}"
+    }
+    "SeriesTiedInfoMessage"
+    {
+        "#format"       "{1:d},{2:d}"
+        "es"            "La serie está empatada {1}-{2}"
+    }
+    "NextSeriesMapInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "El siguiente mapa de la serie será {GREEN}{1}"
+    }
+    "TeamWonMatchInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} ha ganado el partido."
+    }
+    "TeamTiedMatchInfoMessage"
+    {
+        "#format"       "{1:s},{2:s}"
+        "es"            "{1} y {2} han empetado el partido."
+    }
+    "TeamsSplitSeriesBO2InfoMessage"
+    {
+        "#format"       "{1:s},{2:s}"
+        "es"            "{1} y {2} tiene la serie en 1-1."
+    }
+    "TeamWonSeriesInfoMessage"
+    {
+        "#format"       "{1:s},{2:d},{3:d}"
+        "es"            "{1} ha ganado la serie {2}-{3}."
+    }
+    "MatchFinishedInfoMessage"
+    {
+        "es"            "El partido ha finalizado"
+    }
+    "CurrentScoreInfoMessage"
+    {
+        "#format"       "{1:s},{2:d},{3:d},{4:s}"
+        "es"            "{LIGHT_GREEN}{1} {GREEN}{2} {NORMAL}- {GREEN}{3} {LIGHT_GREEN}{4}"
+    }
+    "BackupLoadedInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "La copia de seguirad ha sido cargada correctamente {1}"
+    }
+    "MatchBeginInSecondsInfoMessage"
+    {
+        "#format"       "{1:d}"
+        "es"            "El partido comenzará en {1} segundos."
+    }
+    "MatchIsLiveInfoMessage"
+    {
+        "es"            "El partido está {GREEN}LIVE"
+    }
+    "KnifeIn5SecInfoMessage"
+    {
+        "es"            "La ronda de cuchillos comenzará en 5 segundos."
+    }
+    "KnifeInfoMessage"
+    {
+        "es"            "¡Cuchillos!"
+    }
+    "TeamDecidedToStayInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} ha decidido el quedarse como está."
+    }
+    "TeamDecidedToSwapInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} ha decidido cambiarse de bando."
+    }
+    "TeamLostTimeToDecideInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "{1} se quedará en este bando porque no han tomando una decisión a tiempo."
+    }
+    "ChangingMapInfoMessage"
+    {
+        "#format"       "{1:s}"
+        "es"            "Cambiando el mapa a {GREEN}{1}..."
+    }
+    "MapDecidedInfoMessage"
+    {
+        "es"            "Los mapas que se han elegido son los siguientes:"
+    }
+    "MapIsInfoMessage"
+    {
+        "#format"       "{1:d},{2:s}"
+        "es"            "Mapa {1}: {GREEN}{2}"
+    }
+    "TeamPickedMapInfoMessage"
+    {
+        "#format"       "{1:s},{2:s},{3:d}"
+        "es"            "{1} elegido {GREEN}{2} {NORMAL}como {3} mapa"
+    }
+    "TeamSelectSideInfoMessage"
+    {
+        "#format"       "{1:s},{2:s},{3:s}"
+        "es"            "{1} ha elegido comenzar {GREEN}{2} {NORMAL}en {3}"
+    }
+    "TeamVetoedMapInfoMessage"
+    {
+        "#format"       "{1:s},{2:s}"
+        "es"            "{1} vetado {LIGHT_RED}{2}"
+    }
+    "CaptainLeftOnVetoInfoMessage"
+    {
+        "es"            "Un capitán se fue durante el veto, deteniendo el veto."
+    }
+    "ReadyToResumeVetoInfoMessage"
+    {
+        "es"            "Escribe {GREEN}!ready {NORMAL}cuando esté listo para reanudar el veto."
+    }
+    "MatchConfigLoadedInfoMessage"
+    {
+        "es"            "Cargando la configuración del partido."
+    }
+    "MoveToCoachInfoMessage"
+    {
+        "es"            "Debido a que su equipo está completo, ha sido transladado a la posición de entrenador"
+    }
+    "ReadyTag"
+    {
+        "es"            "[PREPARADO]"
+    }
+    "NotReadyTag"
+    {
+        "es"            "[NO PREPARADO]"
+    }
+    "MatchPoweredBy"
+    {
+        "es"        "Powered by {YELLOW}ARENAGG.com"
+    }
+    "MapVetoPickMenuText"
+    {
+        "es"        "Selecciona un mapa para JUGAR:"
+    }
+    "MapVetoPickConfirmMenuText"
+    {
+        "#format"       "{1:s}"
+        "es"        "Confirma que quieres JUGAR {1}:"
+    }
+    "MapVetoBanMenuText"
+    {
+        "es"        "Selecciona un mapa para VETAR:"
+    }
+    "MapVetoBanConfirmMenuText"
+    {
+        "#format"       "{1:s}"
+        "es"        "Confirma que quieres VETAR {1}:"
+    }
+    "MapVetoSidePickMenuText"
+    {
+        "#format"       "{1:s}"
+        "es"        "Selecciona un bando {1}"
+    }
+    "MapVetoSidePickConfirmMenuText"
+    {
+        "#format"       "{1:s}"
+        "es"        "Confirma que quieres empezar {1}:"
+    }
+    "ConfirmPositiveOptionText"
+    {
+        "es"        "Si"
+    }
+    "ConfirmNegativeOptionText"
+    {
+        "es"        "No"
+    }
+    "VetoCountdown"
+    {
+        "#format"       "{1:i}"
+        "es"        "El veto comienza en {GREEN}{1} {NORMAL}segundos."
+    }
+}
