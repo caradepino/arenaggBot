@@ -23,7 +23,7 @@
     }
     "YouAreReady"
     {
-        "es"            "Estas liso para empezar"
+        "es"            "Estas preparado para empezar"
     }
     "YouAreNotReady"
     {
@@ -58,17 +58,17 @@
     "MinutesToForfeitMessage"
     {
         "#format"       "{1:s},{2:d}"
-        "es"            "{1} tiene {2} minutos para estar liso o perderá el partido."
+        "es"            "{1} tiene {2} minutos para estar preparado o perderá el partido."
     }
     "SecondsToForfeitInfoMessage"
     {
         "#format"       "{1:s},{2:d}"
-        "es"            "{1} tiene {2} segundos para estar liso o perderá el partido."
+        "es"            "{1} tiene {2} segundos para estar preparado o perderá el partido."
     }
     "10SecondsToForfeitInfoMessage"
     {
         "#format"       "{1:s}"
-        "es"            "{1} tiene 10 segundos para estar liso o perderá el partido"
+        "es"            "{1} tiene 10 segundos para estar preparado o perderá el partido"
     }
     "PausePeriodSuffix"
     {
@@ -301,7 +301,7 @@
     }
     "ReadyToResumeVetoInfoMessage"
     {
-        "es"            "Escribe {GREEN}!ready {NORMAL}cuando esté listo para reanudar el veto."
+        "es"            "Escribe {GREEN}!ready {NORMAL}cuando esté preparado para reanudar el veto."
     }
     "MatchConfigLoadedInfoMessage"
     {
