@@ -147,7 +147,7 @@
     "TeamReadyToBeginInfoMessage"
     {
         "#format"       "{1:s}"
-        "es"            "{1} está  para empezar el partido."
+        "es"            "{1} está preparado para empezar el partido."
     }
     "TeamNotReadyInfoMessage"
     {

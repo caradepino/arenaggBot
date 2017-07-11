@@ -321,7 +321,7 @@
     }
     "MatchPoweredBy"
     {
-        "en"        "Powered by {YELLOW}Get5"
+        "en"        "Powered by {RED}LVP"
     }
     "MapVetoPickMenuText"
     {

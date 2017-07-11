@@ -274,6 +274,6 @@
     }
     "MatchPoweredBy"
     {
-        "chi"        "Powered by {YELLOW}Get5"
+        "chi"        "Powered by {RED}LVP"
     }
 }
