@@ -165,7 +165,7 @@ public void Stats_Forfeit(MatchTeam team) {
 public void Stats_SeriesEnd(MatchTeam winner) {
   char winnerString[16];
   GetTeamString(winner, winnerString, sizeof(winnerString));
-  //g_StatsKv.SetNum(STAT_SERIESWINNER_TEAM, winner);
+  g_StatsKv.SetNum(STAT_SERIESWINNER_TEAM, winner);
   g_StatsKv.SetString(STAT_SERIESWINNER, winnerString);
   DumpToFile();
 }

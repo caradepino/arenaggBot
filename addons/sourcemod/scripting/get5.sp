@@ -968,13 +968,19 @@ public void EndSeries() {
   // Figure out who won
   int t1maps = g_TeamSeriesScores[MatchTeam_Team1];
   int t2maps = g_TeamSeriesScores[MatchTeam_Team2];
-
+  int total = t1maps+t2maps;
   MatchTeam winningTeam = MatchTeam_TeamNone;
-  if (t1maps > t2maps) {
-    winningTeam = MatchTeam_Team1;
-  } else if (t2maps > t1maps) {
-    winningTeam = MatchTeam_Team2;
+  if(total>0){
+		if (t1maps > t2maps) {
+		winningTeam = MatchTeam_Team1;
+	  } else if (t2maps > t1maps) {
+		winningTeam = MatchTeam_Team2;
+	  }
+  }else{
+  	winningTeam = g_StatsKv.GetNum(STAT_SERIESWINNER_TEAM);
   }
+  
+  
 
   Stats_SeriesEnd(winningTeam);
   EventLogger_SeriesEnd(winningTeam, t1maps, t2maps);
