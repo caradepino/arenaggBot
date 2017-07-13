@@ -510,7 +510,7 @@ public void OnClientPutInServer(int client) {
 	
 	Stats_ResetClientRoundValues(client);
 }
-public void OnClientDisconnect(int client){
+/*public void OnClientDisconnect(int client){
 	MatchTeam team = GetClientMatchTeam(client);
 	int playerCount = GetTeamPlayerCount(team);
 	if(playerCount<1){
@@ -519,7 +519,7 @@ public void OnClientDisconnect(int client){
 		EndSeries();
 		Get5_MessageToAll("%t", "WaitingForGOTVBrodcastEndingInfoMessage");
 	}
-}
+}*/
 
 
 
@@ -970,7 +970,7 @@ public void EndSeries() {
   int t2maps = g_TeamSeriesScores[MatchTeam_Team2];
   int total = t1maps+t2maps;
   MatchTeam winningTeam = MatchTeam_TeamNone;
-  if(total>0){
+  if(total>0 && g_StatsKv.GetNum(STAT_SERIES_FORFEIT)==0){
 		if (t1maps > t2maps) {
 		winningTeam = MatchTeam_Team1;
 	  } else if (t2maps > t1maps) {
