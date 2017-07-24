@@ -17,6 +17,10 @@
     {
         "en"            "Type {GREEN}!ready {NORMAL}when you are ready to knife."
     }
+	 "DisconnectAlert"
+    {
+        "en"            "Player disconnect."
+    }
     "ReadyToStartInfoMessage"
     {
         "en"            "Type {GREEN}!ready {NORMAL}when you are ready to begin."

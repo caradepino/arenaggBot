@@ -510,16 +510,19 @@ public void OnClientPutInServer(int client) {
 	
 	Stats_ResetClientRoundValues(client);
 }
-/*public void OnClientDisconnect(int client){
+public void OnClientDisconnect(int client){
 	MatchTeam team = GetClientMatchTeam(client);
 	int playerCount = GetTeamPlayerCount(team);
-	if(playerCount<1){
-		ChangeState(GameState_None);
-		Stats_Forfeit(team);
-		EndSeries();
-		Get5_MessageToAll("%t", "WaitingForGOTVBrodcastEndingInfoMessage");
+	if(g_GameState == GameState_Live){
+		if(playerCount<1){
+			ChangeState(GameState_None);
+			Stats_Forfeit(team);
+			EndSeries();
+			Get5_MessageToAll("%t", "DisconnectAlert");
+		}
 	}
-}*/
+	
+}
 
 
 
