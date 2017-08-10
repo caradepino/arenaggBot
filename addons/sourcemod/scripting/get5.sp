@@ -510,7 +510,7 @@ public void OnClientPutInServer(int client) {
 	
 	Stats_ResetClientRoundValues(client);
 }
-public void OnClientDisconnect(int client){
+/*public void OnClientDisconnect(int client){
 	MatchTeam team = GetClientMatchTeam(client);
 	int playerCount = GetTeamPlayerCount(team);
 	if(g_GameState == GameState_Live){
@@ -522,7 +522,7 @@ public void OnClientDisconnect(int client){
 		}
 	}
 	
-}
+}*/
 
 
 
@@ -803,6 +803,7 @@ public Action Command_Stop(int client, int args) {
 		g_FormattedTeamNames[MatchTeam_Team2], g_FormattedTeamNames[MatchTeam_Team1]);
 	} else if (g_TeamGivenStopCommand[MatchTeam_Team1] && g_TeamGivenStopCommand[MatchTeam_Team2]) {
 		RestoreLastRound();
+		ServerCommand("mp_unpause_match");
 	}
 	
 	return Plugin_Handled;
