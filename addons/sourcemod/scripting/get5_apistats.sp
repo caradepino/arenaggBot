@@ -39,6 +39,9 @@ int g_MatchID = -1;
 ConVar g_APIKeyCvar;
 char g_APIKey[128];
 
+ConVar g_MatchRefCvar;
+char g_MatchRef[128];
+
 ConVar g_APIURLCvar;
 char g_APIURL[128];
 
@@ -59,6 +62,10 @@ public void OnPluginStart() {
   g_APIKeyCvar =
       CreateConVar("get5_web_api_key", "", "Match API key, this is automatically set through rcon");
   HookConVarChange(g_APIKeyCvar, ApiInfoChanged);
+  
+  g_MatchRefCvar =
+      CreateConVar("get5_match_ref", "", "Match ref, this is automatically set through rcon");
+  HookConVarChange(g_MatchRefCvar, ApiInfoChanged);
 
   g_APIURLCvar = CreateConVar("get5_web_api_url", "", "URL the get5 api is hosted at");
 
@@ -94,6 +101,7 @@ public Action Command_Avaliable(int client, int args) {
 public void ApiInfoChanged(ConVar convar, const char[] oldValue, const char[] newValue) {
   g_APIKeyCvar.GetString(g_APIKey, sizeof(g_APIKey));
   g_APIURLCvar.GetString(g_APIURL, sizeof(g_APIURL));
+  g_MatchRefCvar.GetString(g_MatchRef, sizeof(g_MatchRef));
 
   // Add a trailing backslash to the api url if one is missing.
   int len = strlen(g_APIURL);
@@ -124,7 +132,7 @@ static Handle CreateRequest(EHTTPMethod httpMethod, const char[] apiMethod, any:
 
   } else {
     SteamWorks_SetHTTPCallbacks(req, RequestCallback);
-    AddStringParam(req, "key", g_APIKey);
+    AddHeader(req, "X-Fandroid-Token", g_APIKey);
     return req;
   }
 }
@@ -261,6 +269,7 @@ public void Get5_OnMapResult(const char[] map, MatchTeam mapWinner, int team1Sco
   if (req != INVALID_HANDLE) {
     AddIntParam(req, "team1score", team1Score);
     AddIntParam(req, "team2score", team2Score);
+	AddStringParam(req, "matchref", g_MatchRef);
     AddStringParam(req, "winner", winnerString);
     SteamWorks_SendHTTPRequest(req);
   }
@@ -327,6 +336,13 @@ static void AddStringParam(Handle request, const char[] key, const char[] value)
     LogDebug("Added param %s=%s to request", key, value);
   }
 }
+static void AddHeader(Handle request, const char[] key, const char[] value) {
+  if (!SteamWorks_SetHTTPRequestHeaderValue(request, key, value)) {
+    LogError("Failed to add http header %s=%s", key, value);
+  } else {
+    LogDebug("Added header %s=%s to request", key, value);
+  }
+}
 
 static void AddIntParam(Handle request, const char[] key, int value) {
   char buffer[32];
@@ -347,11 +363,13 @@ public void Get5_OnSeriesResult(MatchTeam seriesWinner, int team1MapScore, int t
   if (req != INVALID_HANDLE) {
     //AddStringParam(req, "winner", winnerString);
 	AddStringParam(req, "winner", winnerString);
+	AddStringParam(req, "matchref", g_MatchRef);
     AddIntParam(req, "forfeit", forfeit);
     SteamWorks_SendHTTPRequest(req);
   }
 
   g_APIKeyCvar.SetString("");
+  g_MatchRefCvar.SetString("");
 }
 
 public void Get5_OnRoundStatsUpdated() {

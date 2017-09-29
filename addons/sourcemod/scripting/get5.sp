@@ -705,6 +705,7 @@ public Action Command_EndMatch(int client, int args) {
 	
 	Get5_MessageToAll("%t", "AdminForceEndInfoMessage");
 	RestoreCvars(g_MatchConfigChangedCvars);
+	ChangeMap("de_dust2", 10.0);
 	StopRecording();
 	
 	return Plugin_Handled;
@@ -994,6 +995,8 @@ public void EndSeries() {
   Call_PushCell(t1maps);
   Call_PushCell(t2maps);
   Call_Finish();
+  
+  ChangeMap("de_dust2", 10.0);
 
   RestoreCvars(g_MatchConfigChangedCvars);
   ChangeState(GameState_None);
